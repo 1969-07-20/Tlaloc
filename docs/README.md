@@ -2,8 +2,8 @@
 
 This directory contains documents that contain additional info on the Tlaloc program.
 
-- [configuration.md](https://github.com/1969-07-20/Tlaloc/blob/main/doc/configuration.md) has information about the command line and configuration file inputs to Tlaloc which control its function.
-- [implementation.md](https://github.com/1969-07-20/Tlaloc/doc/blob/main/implementation.md) has information Tlaloc's software architecture.  This is useful to people who examine Tlaloc's source code.
+- [configuration.md](https://github.com/1969-07-20/Tlaloc/blob/main/docs/configuration.md) has information about the command line and configuration file inputs to Tlaloc which control its function.
+- [implementation.md](https://github.com/1969-07-20/Tlaloc/blob/main/docs/implementation.md) has information Tlaloc's software architecture.  This is useful to people who examine Tlaloc's source code.
 
 # License
 Copyright 2024 Tlaloc Labs
