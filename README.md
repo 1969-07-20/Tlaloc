@@ -1,16 +1,16 @@
 # Tlaloc
 
-![Tlaloc01](https://github.com/1969-07-20/Tlaloc/TlalocLogo01.jpg "Tlaloc Logo")
+![Tlaloc01](https://github.com/1969-07-20/Tlaloc/blob/main/TlalocLogo01.jpg "Tlaloc Logo")
 
 The Tlaloc repository is structured as follows:
-[docs](https://github.com/1969-07-20/Tlaloc/docs/) is the sub-directory with additional documentation.
-[src](https://github.com/1969-07-20/Tlaloc/src/) is the sub-directory the Tlaloc source code.
-[etc](https://github.com/1969-07-20/Tlaloc/etc/) is the sub-directory miscellaneous utilities with additional documentation.
-[yahooquery](https://github.com/1969-07-20/Tlaloc/yahooquery/) is the sub-directory the a locally modified version of [Yahoo Query](https://github.com/dpguthrie/yahooquery).
+[docs](https://github.com/1969-07-20/Tlaloc/blob/main/docs/) is the sub-directory with additional documentation.
+[src](https://github.com/1969-07-20/Tlaloc/blob/main/src/) is the sub-directory the Tlaloc source code.
+[etc](https://github.com/1969-07-20/Tlaloc/blob/main/etc/) is the sub-directory miscellaneous utilities with additional documentation.
+[yahooquery](https://github.com/1969-07-20/Tlaloc/blob/main/yahooquery/) is the sub-directory the a locally modified version of [Yahoo Query](https://github.com/dpguthrie/yahooquery).
 
 Additional documentation on Tlaloc and its operation is available at the following links:.
-[Tlaloc Configuration and Control](https://github.com/1969-07-20/Tlaloc/docs/configuration.md)
-[Tlaloc Software Implementation](https://github.com/1969-07-20/Tlaloc/docs/implementation.md)
+[Tlaloc Configuration and Control](https://github.com/1969-07-20/Tlaloc/blob/main/docs/configuration.md)
+[Tlaloc Software Implementation](https://github.com/1969-07-20/Tlaloc/blob/main/docs/implementation.md)
 
 # Introduction
 Tlaloc is software in development.  It acquires financial and market data related to a list of stocks from multiple sources, integrates the multiple data streams into a single coherent model of the markets' perception of each stock and then provides the state of the model to one or more clients programs.  Client programs can use this information as they see fit, most likely for the purpose of researching stocks and executing trades based on that research.
