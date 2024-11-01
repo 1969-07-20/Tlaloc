@@ -2,27 +2,27 @@
 
 This directory contains the source code for the Tlaloc program.
 
-- [tlaloc.py](https://github.com/1969-07-20/Tlaloc/src/tlaloc.py) is the starting point for Tlaloc as well as hosts executive logic.
-- [Source_Generic.py](https://github.com/1969-07-20/Tlaloc/src/Source_Generic.py) is the class from which all of the following data source class classes are derived.  Source_Generic provides the logic shared by all source classes such as how to query remote servers, thread management, etc.
+- [tlaloc.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/tlaloc.py) is the starting point for Tlaloc as well as hosts executive logic.
+- [Source_Generic.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_Generic.py) is the class from which all of the following data source class classes are derived.  Source_Generic provides the logic shared by all source classes such as how to query remote servers, thread management, etc.
 
-- [Source_AlphaVantage_DailySummary.py](https://github.com/1969-07-20/Tlaloc/src/Source_AlphaVantage_DailySummary.py) is a data source class which queries AlphaVantage once a day for each stock shortly after the market has closed.
-- [Source_CNBC_DailySummary.py](https://github.com/1969-07-20/Tlaloc/src/Source_CNBC_DailySummary.py) is a data source class which queries CNBC once a day for each stock shortly after the market has closed.
-- [Source_CNBC_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/src/Source_CNBC_IntradayQuote.py) is a data source class which periodically gets delayed quotes from CNBC during market hours.
-- [Source_IEX_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/src/Source_IEX_IntradayQuote.py) is a (now defunct) data source class which periodically gets delayed quotes from IEX Cloud during market hours.
-- [Source_MarketData_DailySummary.py](https://github.com/1969-07-20/Tlaloc/src/Source_MarketData_DailySummary.py) is a data source class which queries MarketData once a day for each stock shortly after the market has closed.
-- [Source_Reuters_DailySummary.py](https://github.com/1969-07-20/Tlaloc/src/Source_Reuters_DailySummary.py) is a data (now defunct) source which queries Reuters once a day for each stock shortly after the market has closed.
-- [Source_Yahoo_DailySummary.py](https://github.com/1969-07-20/Tlaloc/src/Source_Yahoo_DailySummary.py) is a data source class which queries Yahoo Finance once a day for each stock shortly after the market has closed.
-- [Source_Yahoo_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/src/Source_Yahoo_IntradayQuote.py) is a data source class which periodically gets delayed quotes from Yahoo Finance during market hours.
+- [Source_AlphaVantage_DailySummary.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_AlphaVantage_DailySummary.py) is a data source class which queries AlphaVantage once a day for each stock shortly after the market has closed.
+- [Source_CNBC_DailySummary.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_CNBC_DailySummary.py) is a data source class which queries CNBC once a day for each stock shortly after the market has closed.
+- [Source_CNBC_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_CNBC_IntradayQuote.py) is a data source class which periodically gets delayed quotes from CNBC during market hours.
+- [Source_IEX_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_IEX_IntradayQuote.py) is a (now defunct) data source class which periodically gets delayed quotes from IEX Cloud during market hours.
+- [Source_MarketData_DailySummary.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_MarketData_DailySummary.py) is a data source class which queries MarketData once a day for each stock shortly after the market has closed.
+- [Source_Reuters_DailySummary.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_Reuters_DailySummary.py) is a data (now defunct) source which queries Reuters once a day for each stock shortly after the market has closed.
+- [Source_Yahoo_DailySummary.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_Yahoo_DailySummary.py) is a data source class which queries Yahoo Finance once a day for each stock shortly after the market has closed.
+- [Source_Yahoo_IntradayQuote.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_Yahoo_IntradayQuote.py) is a data source class which periodically gets delayed quotes from Yahoo Finance during market hours.
 
-- [Source_Playback.py](https://github.com/1969-07-20/Tlaloc/src/Source_Playback.py) is a data source class which gets reads its information from a file rather than query remote servers, providing a playback capability.
+- [Source_Playback.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/Source_Playback.py) is a data source class which gets reads its information from a file rather than query remote servers, providing a playback capability.
 
-- [config.py](https://github.com/1969-07-20/Tlaloc/src/config.py) is a file which initializes Tlaloc's internal data structure in which runtime parameters are stored.
-- [utils.py](https://github.com/1969-07-20/Tlaloc/src/utils.py) is a file with generic utilities used by the Tlaloc program.
+- [config.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/config.py) is a file which initializes Tlaloc's internal data structure in which runtime parameters are stored.
+- [utils.py](https://github.com/1969-07-20/Tlaloc/blob/main/src/utils.py) is a file with generic utilities used by the Tlaloc program.
 
-- [StartTlaloc.sh](https://github.com/1969-07-20/Tlaloc/src/StartTlaloc.sh) is a file called by systemd to set up the Tlaloc runtime environment and start the program.
+- [StartTlaloc.sh](https://github.com/1969-07-20/Tlaloc/blob/main/src/StartTlaloc.sh) is a file called by systemd to set up the Tlaloc runtime environment and start the program.
 
-- [config.txt](https://github.com/1969-07-20/Tlaloc/src/config.txt) is an example configuration which is to be adapted to local needs.
-- [credentials.txt](https://github.com/1969-07-20/Tlaloc/src/credentials.txt) is an example file for storing credentials.
+- [config.txt](https://github.com/1969-07-20/Tlaloc/blob/main/src/config.txt) is an example configuration which is to be adapted to local needs.
+- [credentials.txt](https://github.com/1969-07-20/Tlaloc/blob/main/src/credentials.txt) is an example file for storing credentials.
 
 # License
 Copyright 2024 Tlaloc Labs
