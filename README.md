@@ -1,6 +1,6 @@
 # Tlaloc
 
-![Tlaloc01](https://github.com/1969-07-20/Tlaloc/blob/main/TlalocLogo01.jpg =512x512 "Tlaloc Logo")
+![Tlaloc01](https://github.com/1969-07-20/Tlaloc/blob/main/TlalocLogo01.jpg =512x512)
 
 The Tlaloc repository is structured as follows:
 - [docs](https://github.com/1969-07-20/Tlaloc/blob/main/docs/) is the sub-directory with additional documentation.
