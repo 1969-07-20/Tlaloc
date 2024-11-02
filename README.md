@@ -8,7 +8,7 @@
 The Tlaloc repository is structured as follows:
 - [docs](https://github.com/1969-07-20/Tlaloc/blob/main/docs/) is the sub-directory with additional documentation.
 - [src](https://github.com/1969-07-20/Tlaloc/blob/main/src/) is the sub-directory the Tlaloc source code.
-- [etc](https://github.com/1969-07-20/Tlaloc/blob/main/etc/) is the sub-directory with miscellaneous utilities with additional documentation.
+- [etc](https://github.com/1969-07-20/Tlaloc/blob/main/etc/) is the sub-directory with miscellaneous utilities.
 - [yahooquery](https://github.com/1969-07-20/Tlaloc/blob/main/yahooquery/) is the sub-directory with a locally modified version of [Yahoo Query](https://github.com/dpguthrie/yahooquery).
 
 Additional documentation on Tlaloc and its operation is available at the following links:.
