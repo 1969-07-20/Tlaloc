@@ -45,8 +45,8 @@ TICKER="ticker_$DATE*.txt"
 
 #  Make directory strings
 TL_LOGS="$ROOT/tlLog"
-TL12_PT1="$ROOT/tl12_pt1"
-TL12_PT2="$ROOT/tl12_pt2"
+TL_PT1="$ROOT/tl_pt1"
+TL_PT2="$ROOT/tl_pt2"
 
 
 #  Abort if directories exist
@@ -59,13 +59,13 @@ if [ -d "$TL_LOGS" ]; then
   ERROR="yes"
 fi
 
-if [ -d "$TL12_PT1" ]; then
-  echo "ERROR:  $TL12_PT1 exists.  ABORTING"
+if [ -d "$TL_PT1" ]; then
+  echo "ERROR:  $TL_PT1 exists.  ABORTING"
   ERROR="yes"
 fi
 
-if [ -d "$TL12_PT2" ]; then
-  echo "ERROR:  $TL12_PT2 exists.  ABORTING"
+if [ -d "$TL_PT2" ]; then
+  echo "ERROR:  $TL_PT2 exists.  ABORTING"
   ERROR="yes"
 fi
 
@@ -79,8 +79,8 @@ if [[ ! $ERROR == "no" ]]; then
 fi
 
 
-echo "STEP #2:  Make directory tree ('$TL_LOGS', '$TL12_PT1', '$TL12_PT2')"
-mkdir -p $TL_LOGS $TL12_PT1 $TL12_PT2
+echo "STEP #2:  Make directory tree ('$TL_LOGS', '$TL_PT1', '$TL_PT2')"
+mkdir -p $TL_LOGS $TL_PT1 $TL_PT2
 
 
 echo "STEP #3:  Move data files to '$ROOT'."
@@ -88,14 +88,14 @@ echo "   - Logs"
 mv -i  logs/tlLog/*  $TL_LOGS
 
 echo "   - Part 1 data files"
-mv -i  logs/tl12_pt1/$QUOTES  $TL12_PT1
+mv -i  logs/tl_pt1/$QUOTES  $TL_PT1
 
 echo "   - Part 2 data files"
-mv -i  logs/tl12_pt2/$QUOTES  $TL12_PT2
+mv -i  logs/tl_pt2/$QUOTES  $TL_PT2
 
 
 echo "STEP #4:  Remove zero length files:"
-touch $TL12_PT1/deleteMe
+touch $TL_PT1/deleteMe
 find $ROOT  -size 0 | xargs rm
 
 
