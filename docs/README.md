@@ -1,4 +1,4 @@
-<img src="https://github.com/1969-07-20/Tlaloc/blob/main/img/TlalocLogo02.jpg" width="512" height="512" />
+<img src="https://github.com/1969-07-20/Tlaloc/blob/main/img/TlalocLogo04.jpg" width="512" height="512" />
 
 # Tlaloc Supporting Documents
 
