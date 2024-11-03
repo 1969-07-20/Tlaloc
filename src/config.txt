@@ -1,0 +1,189 @@
+#@>
+This file is meant to assist in the creation of local configuration file for
+users of Tlaloc by providing an example of the types of content Tlaloc
+recognizes in a config file as well as providing a template.
+
+The following are some heuristics which should ease the task of creating a
+configuration file.
+
+1)  You will probably need to provide only a few values in a config file.
+    Tlaloc provides reasonable defaults for all configuration parameters.
+
+2)  The content of the configuration file is in a slightly extended JSON format.
+    The extension is the inclusion of comments which are removed prior to parsing
+    by a JSON parser.
+
+3)  Blocks comments are delimited by the following triplet of characters
+    '#'+'@'+'>' at the beginning and '<'+'@'+'#' at the end, much like '/*' and
+    '*/' in C/C++.  '#'+'@'+'!' begin line comments which extend from the
+    occurance of '#'+'@'+'!' to the end of the line.
+
+4)  Be very careful that the file, after comments have been removed is valid
+    JSON.  In particular, be careful about commas.  Commas separate items
+    within a list and no comma after the last item of a list.
+
+Copyright 2024 Tlaloc Labs LLC
+
+Distributed under the terms of the GNU Affero General Public License.
+See the file LICENSE.txt in this distribution or <https://www.gnu.org/licenses/>
+<@#
+
+
+{
+    #@>
+    Parameters in the global section control the overall operation of the
+    program as well as override attributes of all sources.
+    <@#
+    "global":
+    {
+#@!     "cur_dir":  ""                                                      #@!  Make this the current working directory.
+#@!     "log_dir":  ""                                                      #@!  Store log files in this directory.
+#@!     "config_file":  "config.txt"                                        #@!  Name of file with configuration parameters.
+#@!     "creds_file":   "credentials.txt"                                   #@!  Name of file with the credentials for sources that require authentication.
+#@!     "skip_query":  false                                                #@!  Preprocess only, don't make queries.
+#@!     "dry_run":  false                                                   #@!  Dry run.
+#@!     "production":  true                                                 #@!  Don't observe normal market times.
+#@!     "playback": false                                                   #@!  Run in playback mode.
+#@!     "skip_first_day":  false                                            #@!  Skip the first day.
+#@!     "offset_mkt_begin":  false                                          #@!  Offset hours by one hour.
+#@!     "shuffle_queries":  true                                            #@!  Shuffle order of symbols when making queries.
+#@!     "enable_ticker":  false                                             #@!  Enable the ticker.
+#@!     "skip_log_quotes":  false                                           #@!  Skip logging messages recieved from the data sources.
+#@!     "skip_log_ticker":  false                                           #@!  Skip logging messages sent over the ticker.
+#@!     "proxies": {}                                                       #@!  Dictionalry with proxy configuration.
+#@!     "ca_cert": ""                                                       #@!  Name of file with certificate when using proxy.
+#@!     "use_SSL":  true                                                    #@!  Use secure sockets for communication with clients.
+#@!     "server_cred_file":  "<<REDACTED>>.pem"                             #@!  Name of file with server credentials (not used currently).
+#@!     "client_cred_file":  "<<REDACTED>>.pem"                             #@!  Name of file with client credentials (not used currently).
+#@!     "pt2_executive_port":  8789                                         #@!  Port for command and control (not used currently).
+#@!     "pt3_subscribe_port":  8788                                         #@!  Port for subcribers (not used currently).
+#@!     "debug_options": {                                                  #@!  Dictionary with debug options
+#@!          "stock":         false,                                        #@!
+#@!          "query":         true,                                         #@!
+#@!          "query_raw":     false,                                        #@!
+#@!          "query_ugly":    false,                                        #@!
+#@!          "query_pretty":  false,                                        #@!
+#@!          "query_extract": false,                                        #@!
+#@!          "threads":       false,                                        #@!
+#@!          "src_attr_lvl0": false,                                        #@!
+#@!          "src_attr_lvl1": false,                                        #@!
+#@!          "src_attr_lvl2": false,                                        #@!
+#@!          "src_attr_lvl3": false                                         #@!
+#@!     }                                                                   #@!
+#@!     "source_list": {                                                    #@!  Dictionary with list of sources to be used.
+#@!         "CNBC_Intraday":      false,                                    #@!
+#@!         "CNBC_Daily":         false,                                    #@!
+#@!         "Yahoo_Intraday":     false,                                    #@!
+#@!         "Yahoo_Daily":        false,                                    #@!
+#@!         "Reuters_Daily":      false,                                    #@!
+#@!         "IEX_Intraday":       false,                                    #@!
+#@!         "AlphaVantage_Daily": false,                                    #@!
+#@!         "MarketData_Daily":   false                                     #@!
+#@!     }                                                                   #@!
+#@!     "symbols": [ "AAPL" ]                                               #@!  List with symbols for which data sources are queried.
+#@!     "market_holidays": [ "24-09-02", "24-11-28", "24-12-25" ]           #@!  List of holidays for which the market is closed.
+
+        #@!  "source_list" indicates from which sources Tlaloc should obtain information.
+        "source_list": {
+            "CNBC_Intraday":       true,
+            "CNBC_Daily":          true,
+            "Yahoo_Intraday":      false,
+            "Yahoo_Daily":         true,
+            "AlphaVantage_Daily":  true,
+            "MarketData_Daily":    true,
+            "IEX_Intraday":        false,
+            "Reuters_Daily":       false
+        },
+
+        #@!  "symbols" gives the list of symbols about which Tlaloc should download information
+        "symbols": [
+            "META", "AAPL", "NFLX", "GOOG"
+        ],
+
+#@!     #@!  "proxies" gives the url for the proxy server for the http and https protocols.
+#@!     "proxies": {
+#@!         "http":  "http://localhost:8000",
+#@!         "https": "https://localhost:8000"
+#@!     },
+#@!
+#@!     #@!  "ca_cert" gives the name of the file with the certificate for the proxy server.
+#@!     "ca_cert": "/some/path/to/some-ca-certificate.crt"
+#@!
+#@!     #@!
+
+        "skip_query":  false
+    },
+
+    #@>
+    Each source has its section in which configuration parameters be configured just for that
+    source.  In addition, a few sources have configuration parameters specific to them.
+    <@#
+
+#@! "Generic":
+#@! {
+#@!     "batch_sleep_time": 13                      #@!  Sleep time between batches of queries
+#@!     "delta_quote": 900                          #@!  Time between queries for the same symbol.
+#@!     "dry_run_file": "exampleJSON_generic.txt"   #@!  Name of file to provide inputs in dry run
+#@!     "pause_sleep": 10                           #@!  Time between polls for resume while in the paused state
+#@!     "hdr":  'Mozilla/5.0 (X11; Ubuntu..."       #@!  User agent string to add to header of queries
+#@!     "map_symbols": {"FB": "META"}               #@!  Mapping from common symbol names to names recoegnized by this source
+#@!     "max_batch": 10                             #@!  Maximum number of symbols in one query to source
+#@!     "max_threads": 10                           #@!  Maximum number of concurrent queries
+#@!     "mkt_beg_time": 1                           #@!  Time in seconds since midnight for the time window to query this source opens
+#@!     "mkt_end_time": 360000                      #@!  Time in seconds since midnight for the time window to query this source closes
+#@!     "mkt_time_zone": "America/New_York"         #@!  Time zone of markets
+#@!     "poll_sleep_time": 0.25                     #@!  Time in seconds a thread should sleep before polling if the las query completes
+#@!     "query_raw_norm": " *\n *"                  #@!  Regex used to normalize raw query
+#@!     "shuffle_queries": False                    #@!  Shuffle the order of the symbols in which this source is queried
+#@!     "timeout": 3.5                              #@!  Baseline time for a query to timeout.
+#@!     "to_backoff": 1.5                           #@!  The ratio which the time between retries of queries is backed off for failed queries.
+#@! },
+
+#@! "CNBC_Intraday":
+#@! {
+#@!     << CNBC_Intraday has no source-specific parameters. >>
+#@! },
+
+#@! "CNBC_Daily":
+#@! {
+#@!     << CNBC_Daily has no source-specific parameters. >>
+#@! },
+
+#@! "Yahoo_Intraday":
+#@! {
+#@!     << Yahoo_Intraday has no source-specific parameters. >>
+#@! },
+
+#@! "Yahoo_Daily":
+#@! {
+#@!     << Yahoo_Daily has no source-specific parameters. >>
+#@! },
+
+#@! "AlphaVantage_Daily":
+#@! {
+#@!     "max_queries_per_day":  23   #@! If number of symbols exceeds this value, queries for symbols take place over multiple days so that this number of queries is not exceeded in a day.
+#@!     << API token should be put in the credentials file. >>
+#@! },
+
+#@! "MarketData_Daily":
+#@! {
+#@!     "max_queries_per_day":  23   #@! If number of symbols exceeds this value, queries for symbols take place over multiple days so that this number of queries is not exceeded in a day.
+#@!     << API token should be put in the credentials file. >>
+#@! },
+
+#@! "IEX_Intraday":
+#@! {
+#@!     "use_sandbox": false   #@!  Use the "sandbox" API instead of the live API.  Sandbox API facilitates software development of clients.
+#@!     << API tokens should be put in the credentials file. >>
+#@! },
+
+#@! "Reuters_Daily":
+#@! {
+#@!     << Reuters_Daily has no source-specific parameters. >>
+#@! }
+
+    "Dummy":
+    {
+        "description":  "This is only here to have a non-existent source end without a comma so all regular sources will end with a comma."
+    }
+}
