@@ -428,6 +428,7 @@ The following is a list of the standard Python modules on which Tlaloc depends:
 The following are third-party packages on which Tlaloc depends.
 - requests
 - twisted
+- curl_cffi
 - yahooquery (locally modified)
 
 ### Twisted for multi-processing / multithreading

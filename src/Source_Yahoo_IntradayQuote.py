@@ -17,6 +17,8 @@ import json
 import re
 #mport pprint
 
+from curl_cffi import Session
+
 
 # BEG Source_Yahoo_IntradayQuote.py SPECIFIC
 from yahooquery import Ticker
@@ -111,10 +113,12 @@ class Source_Yahoo_IntradayQuote(Source_Generic):
 
             symbols = " ".join([batch_list[idx]['qry_symbol'] for idx in range(len(batch_list)) ])
 
+            session = Session(impersonate="chrome")
+
             if 0 == len(config.runtime_params['ca_cert']):
-                yq_tickers = Ticker(symbols)
+                yq_tickers = Ticker(symbols, session=session)
             else:
-                yq_tickers = Ticker(symbols, proxies=config.runtime_params['proxies'], verify=config.runtime_params['ca_cert'])
+                yq_tickers = Ticker(symbols, proxies=config.runtime_params['proxies'], verify=config.runtime_params['ca_cert'], session=session)
 
             loc_symbol = batch_list[0]['loc_symbol']
             print(batch_list[0], flush=True)
